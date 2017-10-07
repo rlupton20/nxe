@@ -1,0 +1,9 @@
+#+TITLE: NXE - a framework for provisioning nixos images over a network
+
+* nxe-netboot
+
+=nxe-netboot= is a script that helps build a custom netboot image that can be used for provisioning.
+
+** nix expressions
+   - nixpkgs :: it's useful for us to have nixpkgs available in the nix store so we can reference the files needed to build the netboot image.
+   - nxe-build-image :: this is a script which knows how to build a netboot image. We install it as an executable in the nix store.

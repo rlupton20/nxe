@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+RELEASE_NIX=RELEASE_NIX_PLACEHOLDER
+nix-build -A netboot $RELEASE_NIX
