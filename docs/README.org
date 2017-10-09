@@ -7,6 +7,6 @@
 ** nix expressions
    - nixpkgs :: it's useful for us to have nixpkgs available in the nix store so we can reference the files needed to build the netboot image.
    - build-pxe-image :: takes a list of configuration modules from which it builds a netboot image.
-   - vanilla-netboot/test-image :: Example attributes using =build-pxe-image=.
+   - nxe-build-image :: script which wraps =nix-build= and =build-pxe-image= to provide a command line tool, taking a =configuration.nix=, and producing files for pxe booting nixos.
 
 *** TODO Merge build-pxe-image into nixpkgs
