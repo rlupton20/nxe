@@ -2,8 +2,11 @@
 
 * nxe-netboot
 
-=nxe-netboot= is a script that helps build a custom netboot image that can be used for provisioning.
+=nxe-netboot= consists of tools for building custom netboot images from a =configuration.nix= file.
 
 ** nix expressions
    - nixpkgs :: it's useful for us to have nixpkgs available in the nix store so we can reference the files needed to build the netboot image.
-   - nxe-build-image :: this is a script which knows how to build a netboot image. We install it as an executable in the nix store.
+   - build-pxe-image :: takes a list of configuration modules from which it builds a netboot image.
+   - vanilla-netboot/test-image :: Example attributes using =build-pxe-image=.
+
+*** TODO Merge build-pxe-image into nixpkgs
