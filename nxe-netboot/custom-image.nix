@@ -41,10 +41,15 @@ in rec {
         '';
       };
 
-  vanilla-netboot = build-pxe-image {};
-  test-image = build-pxe-image { 
-    customModules = [
-      ./configuration.nix
-    ];
+  nxe-build-image = derivation {
+    name = "nxe-build-image";
+    src = ./nxe-build-image-template;
+    nixfile = ./custom-image.nix;
+    coreutils = pkgs.coreutils;
+    gnused = pkgs.gnused;
+    builder = "${pkgs.bash}/bin/bash";
+    args = [ ./nxe-build-image-builder.sh ];
+    system = builtins.currentSystem;
   };
+
 }

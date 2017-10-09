@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+CUSTOM_IMAGE_NIX={{NIX_FILE}}
+CONFIGURATION=$(readlink -f "$1")
+
+nix-build $CUSTOM_IMAGE_NIX -A build-pxe-image --arg customModules "[ $CONFIGURATION ]"
